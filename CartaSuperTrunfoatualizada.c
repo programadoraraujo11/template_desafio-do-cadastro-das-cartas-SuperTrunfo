@@ -2,6 +2,7 @@
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das cartas
+// Nível intermediário
 
       // Área para definição das variáveis para armazenar as propriedades das cidades
   int main(){   
@@ -37,132 +38,115 @@
     float superpoder1 = populacao1 + area1 + pib1 + pontos1 + pibpercapita1 + (1.0 / densidadepopulacional1);
     float superpoder2 = populacao2 + area2 + pib2 + pontos2 + pibpercapita2 + (1.0 / densidadepopulacional2);
     
-   
+    int opcao;
 
-  
-    // EXIBIÇÃO
+    // MENU
+
 
      printf("***  Jogo Super Trunfo  ***\n");
 
-     printf("=====  CARTA 1  =====\n");
-     printf("Estado: %s\n", estado1);
-     printf("Código: %s\n", codigo1);
-     printf("Cidade: %s\n", cidade1);
-     printf("População: %lu\n", populacao1);
-     printf("Área: %.2f km²\n", area1);
-     printf("PIB: %.2f bilhões de reais\n", pib1);
-     printf("Pontos turísticos: %d\n", pontos1);
-     printf("Densidade Populacional: %.2f hab/km²\n", densidadepopulacional1);
-     printf("PIB per Capita: %.11f reias\n", pibpercapita1);
-     printf("Super Poder: %.2f\n", superpoder1);
-
-     printf("=====  CARTA 2  =====\n");
-     printf("Estado: %s\n", estado2);
-     printf("Código: %s\n", codigo2);
-     printf("Cidade: %s\n", cidade2);
-     printf("População: %lu\n", populacao2);
-     printf("Área: %.2f km²\n", area2);
-     printf("PIB: %.2f bilhões de reais\n", pib2);
-     printf("Pontos turísticos: %d\n", pontos2);
-     printf("Densidade Populacional: %.2f hab/km²\n", densidadepopulacional2);
-     printf("PIB per Capita: %.11f reias\n", pibpercapita2);
-     printf("Super Poder: %.2f\n", superpoder2);
-
-     // COMPARAÇÃO
-
-     printf("\n=====  COMPARAÇÃO  =====\n");
-      
-     if (populacao1 > populacao2) {
-    
-        printf("População: Carta 1 - São Paulo(SP): %lu \n", populacao1);
-        printf("População: Carta 2 - Rio de Janeiro(RJ): %lu \n", populacao2);
-        printf("Resultado: Carta 1 venceu!\n");
+     printf("Escolha o atributo para comparar: \n");
+     printf("1. População\n");
+     printf("2. Área\n");
+     printf("3. PIB\n");
+     printf("4. Pontos Turísticos\n");
+     printf("5. Densidade Populacional\n");
+     printf("Opção: ");
+     scanf("%d", &opcao);
      
-      } else { 
-         printf("População: Carta 1 - São Paulo(SP): %lu \n", populacao1);
-        printf("População: Carta 2 - Rio de Janeiro(RJ): %lu \n", populacao2);
-        printf("Resultado: Carta 2 venceu!\n");
-      } 
 
-         if (area1 > area2) {
-    
-        printf("Área: Carta 1 - São Paulo(SP): %.2f km² \n", area1);
-        printf("Área: Carta 2 - Rio de Janeiro(RJ): %.2f km² \n", area2);
-        printf("Resultado: Carta 1 venceu!\n");
+     printf("\n=====  Resultado  =====\n");
+     printf("Carta 1: %s\n", estado1);
+     printf("Carta 2: %s\n", estado2);
+
+     switch (opcao)
+     {
+     case 1:
+        printf("Atributo escolhido: População\n");
+        printf("%s: %lu\n", estado1, populacao1);
+        printf("%s: %lu\n", estado2, populacao2);
+
+        if (populacao1 > populacao2)
+        {
+           printf("Vencedor: %s\n", estado1);
+        } else if (populacao2 > populacao1)
+        {
+            printf("Vencedor: %s\n", estado2);
+        } else {
+            printf("Empate!\n");
+        }
+        break;
+
+        case 2:
+        printf("Atributo escolhido: Área\n");
+        printf("%s: %.2f\n", estado1, area1);
+        printf("%s: %.2f\n", estado2, area2);
+
+        if (area1 > area2)
+        {
+           printf("Vencedor: %s\n", estado1);
+        } else if (area2 > area1)
+        {
+            printf("Vencedor: %s\n", estado2);
+        } else {
+            printf("Empate!\n");
+        }
+        break;
+
+        case 3:
+        printf("Atributo escolhido: PIB\n");
+        printf("%s: %.2f\n", estado1, pib1);
+        printf("%s: %.2f\n", estado2, pib2);
+
+        if (pib1 > pib2)
+        {
+           printf("Vencedor: %s\n", estado1);
+        } else if (pib2 > pib1)
+        {
+            printf("Vencedor: %s\n", estado2);
+        } else {
+            printf("Empate!\n");
+        }
+        break;
      
-      } else { 
-         printf("Área: Carta 1 - São Paulo(SP): %.2f km² \n", area1);
-        printf("Área: Carta 2 - Rio de Janeiro(RJ): %.2f km² \n", area2);
-        printf("Resultado: Carta 2 venceu!\n");
+        case 4:
+        printf("Atributo escolhido: Pontos Turísticos\n");
+        printf("%s: %d\n", estado1, pontos1);
+        printf("%s: %d\n", estado2, pontos2);
 
-      } 
-        
-          if (pib1 > pib2) {
+        if (pontos1 > pontos2)
+        {
+           printf("Vencedor: %s\n", estado1);
+        } else if (pontos2 > pontos1)
+        {
+            printf("Vencedor: %s\n", estado2);
+        } else {
+            printf("Empate!\n");
+        }
+        break;
+
+        case 5:
+        printf("Atributo escolhido: Densidade populacional\n");
+        printf("%s: %.2f\n", estado1, densidadepopulacional1);
+        printf("%s: %.2f\n", estado2, densidadepopulacional2);
+
+        if (densidadepopulacional1 < densidadepopulacional2)
+        {
+           printf("Vencedor: %s\n", estado1);
+        } else if (densidadepopulacional2 < densidadepopulacional1)
+        {
+            printf("Vencedor: %s\n", estado2);
+        } else {
+            printf("Empate!\n");
+        }
+        break;
+
+     default:
+
+       printf("Opção inválida!\n");
+        break;
+     }
+
     
-        printf("PIB: Carta 1 - São Paulo(SP): %.2f bilhões de reais \n", pib1);
-        printf("PIB: Carta 2 - Rio de Janeiro(RJ): %.2f bilhões de reais\n", pib2);
-        printf("Resultado: Carta 1 venceu!\n");
-     
-      } else { 
-         printf("PIB: Carta 1 - São Paulo(SP): %.2f bilhões de reais \n", pib1);
-        printf("PIB: Carta 2 - Rio de Janeiro(RJ): %.2f bilhões de reais \n", pib2);
-        printf("Resultado: Carta 2 venceu!\n");
-        
-      } 
-
-      if (pontos1 > pontos2) {
-    
-        printf("Pontos turísticos: Carta 1 - São Paulo(SP): %d \n", pontos1);
-        printf("Pontos turísticos: Carta 2 - Rio de Janeiro(RJ): %d \n", pontos2);
-        printf("Resultado: Carta 1 venceu!\n");
-     
-      } else { 
-         printf("Pontos turísticos: Carta 1 - São Paulo(SP): %d \n",pontos1);
-        printf("Pontos turísticos: Carta 2 - Rio de Janeiro(RJ): %d \n", pontos2);
-        printf("Resultado: Carta 2 venceu!\n");
-      } 
-
-      if (densidadepopulacional1 < densidadepopulacional2) {
-    
-        printf("Densidade populacional: Carta 1 - São Paulo(SP): %.2f \n", densidadepopulacional1);
-        printf("Densidade populacional: Carta 2 - Rio de Janeiro(RJ): %.2f \n", densidadepopulacional2);
-        printf("Resultado: Carta 1 venceu!\n");
-     
-      } else { 
-         printf("Densidade populacional: Carta 1 - São Paulo(SP): %.2f \n", densidadepopulacional1);
-        printf("Densidade populacional: Carta 2 - Rio de Janeiro(RJ): %.2f \n", densidadepopulacional2);
-        printf("Resultado: Carta 2 venceu!\n");
-
-      } 
-
-      if (pibpercapita1 > pibpercapita2) {
-    
-        printf("PIB per capita: Carta 1 - São Paulo(SP): %.11f reais \n", pibpercapita1);
-        printf("PIB per capita: Carta 2 - Rio de Janeiro(RJ): %.11f reais\n", pibpercapita2);
-        printf("Resultado: Carta 1 venceu!\n");
-     
-      } else { 
-         printf("PIB per capita: Carta 1 - São Paulo(SP): %.11f reais \n", pibpercapita1);
-        printf("PIB per capita: Carta 2 - Rio de Janeiro(RJ): %.11f reais \n", pibpercapita2);
-        printf("Resultado: Carta 2 venceu!\n");
-        
-      } 
-
-       if (superpoder1 > superpoder2) {
-    
-        printf("Super poder: Carta 1 - São Paulo(SP): %.2f \n", superpoder1);
-        printf("Super poder: Carta 2 - Rio de Janeiro(RJ): %.2f \n", superpoder2);
-        printf("Resultado: Carta 1 venceu!\n");
-     
-      } else { 
-         printf("Super poder: Carta 1 - São Paulo(SP): %.2f \n", superpoder1);
-        printf("Super poder: Carta 2 - Rio de Janeiro(RJ): %.2f \n", superpoder2);
-        printf("Resultado: Carta 2 venceu!\n");
-
-      } 
-
-
-   
-
     return 0;
   }
