@@ -1,50 +1,39 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das cartas
-// Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
+int main () {
 
-      // Área para definição das variáveis para armazenar as propriedades das cidades
-  int main(){ 
-    char estado[50];
-    char código[10]; 
-    char nomedaCidade[50];
-    int população;
-    float área;
-    float Pib;
-    int pontos;
-    
+    int i;
 
-       // Área para entrada de dados
-     printf("Digite o Estado: \n");
-     scanf("%s", &estado);
+    // Mover a torre 5 casas para a direita
 
-     printf("Digite o código: \n");
-     scanf("%s", &código);
+    printf("Movimento da Torre:\n");
+for (i = 1; i <= 5; i++)
+{
+    printf("Direita\n");    // Imprime a direção do movimento
+}
 
-     printf("Digite o nome da Cidade: \n");
-     scanf("%s", &nomedaCidade);
+// Mover o Bispo 5 casas para cima e à direita
+printf("Movimento do Bispo:\n");
 
-     printf("Digite a população: \n");
-     scanf("%d", &população);
+i = 1;
+while (i <= 5)
+{
+   printf("Cima e à direita\n");
+   i++;
+}
 
-     printf("Digite a área: \n");
-     scanf("%f", &área);
+// Mover a Rainha 8 casas para a esquerda
 
-     printf("Digite o Pib: \n");
-     scanf("%f", &Pib);
+printf("Movimento da Rainha:\n");
 
-     printf("Digite o número de pontos turísticos: \n");
-     scanf("%d", &pontos);
+i = 1;
+do
+{
+    printf("Esquerda\n");
+    i++;
+} while (i <= 8);
 
-       // Área para exibição dos dados da cidade
-     printf("Nome do Estado: %s\n", estado);
-     printf("Número do Código: %s\n", código);
-     printf("Nome da Cidade: %s\n", nomedaCidade);
-     printf("População: %d\n", população);
-     printf("Área em km²: %f\n", área);
-     printf("PIB: %f\n", Pib);
-     printf("Pontos turísticos: %d\n", pontos);
 
-      return 0;
-} 
+return 0;
+
+}
