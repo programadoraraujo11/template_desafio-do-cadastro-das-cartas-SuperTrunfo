@@ -3,6 +3,7 @@
 int main () {
 
     int i;
+    int movimentoCavalo = 1; // Flag para controlar o movimento em 'L'
 
     // Mover a torre 5 casas para a direita
 
@@ -13,7 +14,7 @@ for (i = 1; i <= 5; i++)
 }
 
 // Mover o Bispo 5 casas para cima e à direita
-printf("Movimento do Bispo:\n");
+printf("\nMovimento do Bispo:\n");
 
 i = 1;
 while (i <= 5)
@@ -24,7 +25,7 @@ while (i <= 5)
 
 // Mover a Rainha 8 casas para a esquerda
 
-printf("Movimento da Rainha:\n");
+printf("\nMovimento da Rainha:\n");
 
 i = 1;
 do
@@ -33,7 +34,19 @@ do
     i++;
 } while (i <= 8);
 
+    printf("\n");
 
+    while (movimentoCavalo--)
+    {
+        printf("Movimento do Cavalo:\n");
+       for (int i = 0; i < 2; i++)
+       {
+        printf("Cima\n"); // Imprime "Cima" duas vezes
+
+       }
+        printf("Direita\n"); // Imprime "Direita" uma vez
+    }
+    
 return 0;
 
 }
